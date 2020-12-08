@@ -54,9 +54,9 @@ body {
     height: 100%;
 }
 
+.firstWindow,
 .secondWindow,
-.thirdWindow,
-.fourthWindow {
+.thirdWindow {
     display: none;
 }
 
@@ -308,7 +308,7 @@ body {
 }
 
 .virusList__item {
-    width: 80vw;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,4 +352,31 @@ body {
 
 .fourthWindow .container {
     top: 45%;
+}
+
+@media (max-height: 650px) {
+    .thirdWindow .container {
+        padding-top: 50px;
+    }
+}
+@media (max-height: 610px) {
+    .thirdWindow .container {
+        padding-top: 30px;
+    }
+}
+@media (max-height: 580px) {
+    .thirdWindow .container {
+        padding-top: 10px;
+    }
+}
+@media (max-height: 540px) {
+    .thirdWindow .container {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 330px) {
+    .virusList__desc {
+        font-size: 16px;
+    }
 }
