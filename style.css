@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./fonts/SFProDisplay-Regular.eot');
+    src: local('fonts/SF Pro Display Regular'), local('./fonts/SFProDisplay-Regular'),
+    url('./fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/SFProDisplay-Regular.woff2') format('woff2'),
+    url('./fonts/SFProDisplay-Regular.woff') format('woff'),
+    url('./fonts/SFProDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./fonts/SFProDisplay-Semibold.eot');
+    src: local('./fonts/SF Pro Display Semibold'), local('./fonts/SFProDisplay-Semibold'),
+    url('./fonts/SFProDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+    url('./fonts/SFProDisplay-Semibold.woff') format('woff'),
+    url('./fonts/SFProDisplay-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./fonts/SFProDisplay-Bold.eot');
+    src: local('./fonts/SF Pro Display Bold'), local('./fonts/SFProDisplay-Bold'),
+    url('./fonts/SFProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/SFProDisplay-Bold.woff2') format('woff2'),
+    url('./fonts/SFProDisplay-Bold.woff') format('woff'),
+    url('./fonts/SFProDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "SF Pro Display", sans-serif;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.firstWindow,
+.secondWindow,
+.thirdWindow,
+.fourthWindow {
+    background: linear-gradient(180deg, #2E2E46 0%, #181824 100%);
+    width: 100%;
+    height: 100%;
+}
+
+.secondWindow,
+.thirdWindow,
+.fourthWindow {
+    display: none;
+}
+
+.firstWindow {}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.circleWrap {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+.circle {
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    border: 1px solid #DC2A44;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.circle:nth-of-type(1) {
+    animation: circleAnimation 5s linear infinite;
+    animation-delay: 1s;
+}
+.circle:nth-of-type(2) {
+    animation: circleAnimation 5s linear infinite;
+    animation-delay: 2s;
+}
+.circle:nth-of-type(3) {
+    animation: circleAnimation 5s linear infinite;
+    animation-delay: 3s;
+}
+.circle:nth-of-type(4) {
+    animation: circleAnimation 5s linear infinite;
+    animation-delay: 4s;
+}
+.circle:nth-of-type(5) {
+    animation: circleAnimation 5s linear infinite;
+    animation-delay: 5s;
+}
+
+@keyframes circleAnimation {
+    0% {
+        width: 10vw;
+        height: 10vw;
+        opacity: .1;
+    }
+    25% {
+        width: 70vw;
+        height: 70vw;
+        opacity: .2;
+    }
+    50% {
+        width: 130vw;
+        height: 130vw;
+        opacity: .3;
+    }
+    75% {
+        width: 200vw;
+        height: 200vw;
+        opacity: .4;
+    }
+    100% {
+        width: 260vw;
+        height: 260vw;
+        opacity: .5;
+    }
+}
+
+.mainIcon {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.phoneImg {
+    width: 100%;
+    background: #262538;
+}
+
+.warningImg {
+    position: absolute;
+    bottom: -5px;
+    right: -50%;
+}
+
+.mainHeading {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 45px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.mainDesc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 17px;
+    text-align: center;
+    margin-top: 16px;
+    width: 80vw;
+    z-index: 2;
+}
+
+.startBtn {
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1977FF;
+    box-shadow: 0 5px 18px rgba(25, 119, 255, 0.63);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    border: none;
+    height: 50px;
+    cursor: pointer;
+}
+
+.secondWindow {
+    position: relative;
+}
+
+.scanLine {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    height: 4px;
+    background: #1977FF;
+    box-shadow: 0 0 27px #1977FF;
+    animation: scanLine 8s linear;
+    opacity: 0;
+}
+
+@keyframes scanLine {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    50% {
+        top: 100%;
+        opacity: 1;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.thirdWindow {}
+
+.thirdWindow .container {
+    position: inherit;
+    transform: inherit;
+    padding-top: 70px;
+}
+
+.thirdWindow .mainHeading {
+    margin-top: 30px;
+}
+
+.thirdWindow .mainDesc {
+    margin: 8px auto 0 auto;
+    font-weight: 400;
+    color: #fff;
+}
+
+.allVirusList {
+    list-style: none;
+    margin-top: 24px;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+.allVirusList__item {
+    width: 70vw;
+    display: flex;
+    align-content: center;
+    margin-bottom: 16px;
+}
+
+.allVirusList__img {
+    width: 24px;
+    height: 24px;
+}
+
+.allVirusList__header {
+    font-weight: 700;
+    color: #fff;
+    font-size: 24px;
+    margin: 0 0 0 10px;
+}
+
+.allVirusList__desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 14px;
+    text-align: left;
+}
+
+.virusList {
+    list-style: none;
+    width: 100%;
+    background: #3C3B4B;
+    border-radius: 20px 20px 0 0;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    padding: 37px 0 0 0;
+    overflow: hidden;
+}
+
+.virusList:before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 4px;
+    background: #E8E8E8;
+    border-radius: 100px;
+}
+
+.virusList:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(35, 35, 53, 0) 11.44%, #252537 100%);
+}
+
+.virusList__item {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+}
+
+.virusList__img {
+    width: 24px;
+    height: 24px;
+}
+
+.virusList__desc {
+    font-size: 17px;
+    color: #fff;
+    margin-left: 16px;
+}
+
+.repairBtn {
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 90vw;
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fourthWindow {}
+
+.fourthWindow .phoneImg {
+    background: none;
+    width: 100px;
+    transform: translateX(20px);
+}
+
+.fourthWindow .container {
+    top: 45%;
+}
