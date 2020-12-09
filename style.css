@@ -291,20 +291,23 @@ button:focus {
     text-align: left;
 }
 
-.virusList {
-    list-style: none;
-    width: 100%;
-    background: #3C3B4B;
-    border-radius: 20px 20px 0 0;
+.virusList__wrap {
     height: 45%;
     position: absolute;
     bottom: 0;
-    padding: 37px 0 0 0;
-    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background: #3C3B4B;
 }
 
-.virusList:before {
-    content: "";
+.virusList {
+    list-style: none;
+    width: 100%;
+    padding: 37px 0 0 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.virusList__line {
     position: absolute;
     top: 16px;
     left: 50%;
@@ -315,8 +318,7 @@ button:focus {
     border-radius: 100px;
 }
 
-.virusList:after {
-    content: "";
+.virusList__shadow {
     position: absolute;
     width: 100%;
     height: 100px;
